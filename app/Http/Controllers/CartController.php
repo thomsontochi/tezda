@@ -11,9 +11,9 @@ use App\Http\Requests\CartAddRequest;
 class CartController extends Controller
 {
     // Add a product to the cart
-    public function add(CartAddRequest $request, Product $product)
+    public function add(Request $request, Product $product)
     {
-        dd('we want to add');
+        // dd($request);
         // Get the authenticated user
         $user = auth()->user();
 
@@ -23,6 +23,7 @@ class CartController extends Controller
         $cartItem = Cart::where('user_id', $user->id)
             ->where('product_id', $product->id)
             ->first();
+
 
         if ($cartItem) {
             // Product is already in the cart, update quantity
@@ -36,8 +37,10 @@ class CartController extends Controller
             ]);
         }
 
+        // dd($cartItem);
+
         // Redirect back to the product listing page or the cart view
-        return redirect()->route('products.index')->with('success', 'Product added to cart.');
+        return redirect()->route('product.index')->with('success', 'Product added to cart.');
     }
 
     // Update the quantity of a product in the cart

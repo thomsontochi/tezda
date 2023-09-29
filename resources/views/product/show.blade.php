@@ -72,8 +72,14 @@
                     <!-- Add to Cart Form -->
                     <form action="{{ route('cart.add', $product->id) }}" method="POST">
                         @csrf
-                        <button type="submit" class="btn btn-primary">Add to Cart</button>
+                        <div class="input-group">
+                            <input type="number" name="quantity" value="1" min="1" class="form-control">
+                            <div class="input-group-append">
+                                <button type="submit" class="btn btn-primary">Add to Cart</button>
+                            </div>
+                        </div>
                     </form>
+                    
 
 
                 </div>

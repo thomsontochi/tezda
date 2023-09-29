@@ -21,6 +21,7 @@ class CartAddRequest extends FormRequest
      */
     public function rules(): array
     {
+        dd('we hit rule');
         return [
             'product_id' => 'required|exists:products,id',
             'quantity' => 'required|integer|min:1',
