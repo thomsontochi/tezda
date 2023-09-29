@@ -5,14 +5,19 @@ namespace App\Http\Controllers;
 use App\Models\Cart;
 use App\Models\Product;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\CartAddRequest;
 
 class CartController extends Controller
 {
     // Add a product to the cart
-    public function add(Product $product)
+    public function add(CartAddRequest $request, Product $product)
     {
+        dd('we want to add');
         // Get the authenticated user
         $user = auth()->user();
+
+        // Validation has already been performed by the CartAddRequest
 
         // Check if the product is already in the user's cart
         $cartItem = Cart::where('user_id', $user->id)
@@ -27,7 +32,7 @@ class CartController extends Controller
             Cart::create([
                 'user_id' => $user->id,
                 'product_id' => $product->id,
-                'quantity' => 1, // You can adjust this quantity as needed
+                'quantity' => $request->quantity,
             ]);
         }
 
