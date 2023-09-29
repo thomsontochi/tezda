@@ -7,17 +7,37 @@ use App\Models\Product;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CartAddRequest;
+use Laravel\Prompts\Prompt;
+
+use Validator;
 
 class CartController extends Controller
 {
     // Add a product to the cart
-    public function add(Request $request, Product $product)
+    public function add(CartAddRequest $request, Product $product)
     {
         // dd($request);
+        // $product_id = Product::findOrFail($product->id);
+        // dd($product_id);
+        // $request->validate([
+        //     'quantity' => 'required|integer|min:1',
+        //     'product_id' => 'required|exists:products,id',
+        // ]);
+
+       
+
+        // $validator = Validator::make($request->all(),[
+        //     'quantity' => 'required|integer|min:1',
+        //     'product_id' => 'required|exists:products,id',
+        // ]);
+
+        // if ($validator->fails()) {
+        //     return response()->json([ 'message' => $validator->errors() ]);
+        // }
+
+        // dd($validator);
         // Get the authenticated user
         $user = auth()->user();
-
-        // Validation has already been performed by the CartAddRequest
 
         // Check if the product is already in the user's cart
         $cartItem = Cart::where('user_id', $user->id)

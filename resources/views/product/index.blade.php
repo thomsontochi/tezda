@@ -2,43 +2,42 @@
 
 @section('content')
     {{-- <img src="{{ asset('images/' . $product->image) }}" class="card-img-top" alt="{{ $product->name }}"> --}}
+    @if (session('success'))
+        <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative" role="alert">
+            <strong class="font-bold">Success!</strong>
+            <span class="block sm:inline">{{ session('success') }}</span>
+            <span class="absolute top-0 bottom-0 right-0 px-4 py-3">
+                <svg class="fill-current h-6 w-6 text-green-500" role="button" xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20">
+                    <title>Close</title>
+                    <path
+                        d="M14.293 5.293a1 1 0 011.414 0l5 5a1 1 0 01-1.414 1.414L10 6.414l-4.293 4.293a1 1 0 01-1.414-1.414l5-5a1 1 0 011.414 0z"
+                        clip-rule="evenodd" fill-rule="evenodd"></path>
+                </svg>
+            </span>
+        </div>
+    @endif
 
+    @if (session('error'))
+        <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
+            <strong class="font-bold">Error!</strong>
+            <span class="block sm:inline">{{ session('error') }}</span>
+            <span class="absolute top-0 bottom-0 right-0 px-4 py-3">
+                <svg class="fill-current h-6 w-6 text-red-500" role="button" xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20">
+                    <title>Close</title>
+                    <path
+                        d="M14.293 5.293a1 1 0 011.414 0l5 5a1 1 0 01-1.414 1.414L10 6.414l-4.293 4.293a1 1 0 01-1.414-1.414l5-5a1 1 0 011.414 0z"
+                        clip-rule="evenodd" fill-rule="evenodd"></path>
+                </svg>
+            </span>
+        </div>
+    @endif
     <div class="bg-white">
         @foreach ($products as $product)
             <div class="pt-6">
 
-                @if (session('success'))
-                    <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative"
-                        role="alert">
-                        <strong class="font-bold">Success!</strong>
-                        <span class="block sm:inline">{{ session('success') }}</span>
-                        <span class="absolute top-0 bottom-0 right-0 px-4 py-3">
-                            <svg class="fill-current h-6 w-6 text-green-500" role="button" xmlns="http://www.w3.org/2000/svg"
-                                viewBox="0 0 20 20">
-                                <title>Close</title>
-                                <path
-                                    d="M14.293 5.293a1 1 0 011.414 0l5 5a1 1 0 01-1.414 1.414L10 6.414l-4.293 4.293a1 1 0 01-1.414-1.414l5-5a1 1 0 011.414 0z"
-                                    clip-rule="evenodd" fill-rule="evenodd"></path>
-                            </svg>
-                        </span>
-                    </div>
-                @endif
 
-                @if (session('error'))
-                    <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
-                        <strong class="font-bold">Error!</strong>
-                        <span class="block sm:inline">{{ session('error') }}</span>
-                        <span class="absolute top-0 bottom-0 right-0 px-4 py-3">
-                            <svg class="fill-current h-6 w-6 text-red-500" role="button" xmlns="http://www.w3.org/2000/svg"
-                                viewBox="0 0 20 20">
-                                <title>Close</title>
-                                <path
-                                    d="M14.293 5.293a1 1 0 011.414 0l5 5a1 1 0 01-1.414 1.414L10 6.414l-4.293 4.293a1 1 0 01-1.414-1.414l5-5a1 1 0 011.414 0z"
-                                    clip-rule="evenodd" fill-rule="evenodd"></path>
-                            </svg>
-                        </span>
-                    </div>
-                @endif
 
 
 
@@ -162,9 +161,9 @@
                                     <legend class="sr-only">Choose a color</legend>
                                     <div class="flex items-center space-x-3">
                                         <!--
-                                Active and Checked: "ring ring-offset-1"
-                                Not Active and Checked: "ring-2"
-                              -->
+                                    Active and Checked: "ring ring-offset-1"
+                                    Not Active and Checked: "ring-2"
+                                  -->
                                         <label
                                             class="relative -m-0.5 flex cursor-pointer items-center justify-center rounded-full p-0.5 focus:outline-none ring-gray-400">
                                             <input type="radio" name="color-choice" value="White" class="sr-only"
@@ -174,9 +173,9 @@
                                                 class="h-8 w-8 bg-white rounded-full border border-black border-opacity-10"></span>
                                         </label>
                                         <!--
-                                Active and Checked: "ring ring-offset-1"
-                                Not Active and Checked: "ring-2"
-                              -->
+                                    Active and Checked: "ring ring-offset-1"
+                                    Not Active and Checked: "ring-2"
+                                  -->
                                         <label
                                             class="relative -m-0.5 flex cursor-pointer items-center justify-center rounded-full p-0.5 focus:outline-none ring-gray-400">
                                             <input type="radio" name="color-choice" value="Gray" class="sr-only"
@@ -186,9 +185,9 @@
                                                 class="h-8 w-8 bg-gray-200 rounded-full border border-black border-opacity-10"></span>
                                         </label>
                                         <!--
-                                Active and Checked: "ring ring-offset-1"
-                                Not Active and Checked: "ring-2"
-                              -->
+                                    Active and Checked: "ring ring-offset-1"
+                                    Not Active and Checked: "ring-2"
+                                  -->
                                         <label
                                             class="relative -m-0.5 flex cursor-pointer items-center justify-center rounded-full p-0.5 focus:outline-none ring-gray-900">
                                             <input type="radio" name="color-choice" value="Black" class="sr-only"
@@ -236,9 +235,9 @@
                                                 aria-labelledby="size-choice-1-label">
                                             <span id="size-choice-1-label">XS</span>
                                             <!--
-                                  Active: "border", Not Active: "border-2"
-                                  Checked: "border-indigo-500", Not Checked: "border-transparent"
-                                -->
+                                      Active: "border", Not Active: "border-2"
+                                      Checked: "border-indigo-500", Not Checked: "border-transparent"
+                                    -->
                                             <span class="pointer-events-none absolute -inset-px rounded-md"
                                                 aria-hidden="true"></span>
                                         </label>
@@ -249,9 +248,9 @@
                                                 aria-labelledby="size-choice-2-label">
                                             <span id="size-choice-2-label">S</span>
                                             <!--
-                                  Active: "border", Not Active: "border-2"
-                                  Checked: "border-indigo-500", Not Checked: "border-transparent"
-                                -->
+                                      Active: "border", Not Active: "border-2"
+                                      Checked: "border-indigo-500", Not Checked: "border-transparent"
+                                    -->
                                             <span class="pointer-events-none absolute -inset-px rounded-md"
                                                 aria-hidden="true"></span>
                                         </label>
@@ -262,9 +261,9 @@
                                                 aria-labelledby="size-choice-3-label">
                                             <span id="size-choice-3-label">M</span>
                                             <!--
-                                  Active: "border", Not Active: "border-2"
-                                  Checked: "border-indigo-500", Not Checked: "border-transparent"
-                                -->
+                                      Active: "border", Not Active: "border-2"
+                                      Checked: "border-indigo-500", Not Checked: "border-transparent"
+                                    -->
                                             <span class="pointer-events-none absolute -inset-px rounded-md"
                                                 aria-hidden="true"></span>
                                         </label>
@@ -275,9 +274,9 @@
                                                 aria-labelledby="size-choice-4-label">
                                             <span id="size-choice-4-label">L</span>
                                             <!--
-                                  Active: "border", Not Active: "border-2"
-                                  Checked: "border-indigo-500", Not Checked: "border-transparent"
-                                -->
+                                      Active: "border", Not Active: "border-2"
+                                      Checked: "border-indigo-500", Not Checked: "border-transparent"
+                                    -->
                                             <span class="pointer-events-none absolute -inset-px rounded-md"
                                                 aria-hidden="true"></span>
                                         </label>
@@ -288,9 +287,9 @@
                                                 aria-labelledby="size-choice-5-label">
                                             <span id="size-choice-5-label">XL</span>
                                             <!--
-                                  Active: "border", Not Active: "border-2"
-                                  Checked: "border-indigo-500", Not Checked: "border-transparent"
-                                -->
+                                      Active: "border", Not Active: "border-2"
+                                      Checked: "border-indigo-500", Not Checked: "border-transparent"
+                                    -->
                                             <span class="pointer-events-none absolute -inset-px rounded-md"
                                                 aria-hidden="true"></span>
                                         </label>
@@ -301,9 +300,9 @@
                                                 aria-labelledby="size-choice-6-label">
                                             <span id="size-choice-6-label">2XL</span>
                                             <!--
-                                  Active: "border", Not Active: "border-2"
-                                  Checked: "border-indigo-500", Not Checked: "border-transparent"
-                                -->
+                                      Active: "border", Not Active: "border-2"
+                                      Checked: "border-indigo-500", Not Checked: "border-transparent"
+                                    -->
                                             <span class="pointer-events-none absolute -inset-px rounded-md"
                                                 aria-hidden="true"></span>
                                         </label>
@@ -314,9 +313,9 @@
                                                 aria-labelledby="size-choice-7-label">
                                             <span id="size-choice-7-label">3XL</span>
                                             <!--
-                                  Active: "border", Not Active: "border-2"
-                                  Checked: "border-indigo-500", Not Checked: "border-transparent"
-                                -->
+                                      Active: "border", Not Active: "border-2"
+                                      Checked: "border-indigo-500", Not Checked: "border-transparent"
+                                    -->
                                             <span class="pointer-events-none absolute -inset-px rounded-md"
                                                 aria-hidden="true"></span>
                                         </label>
