@@ -282,9 +282,9 @@
                             </fieldset>
                         </div>
 
-                        <button type="submit" href="{{ route('products.show', ['product' => $product->id]) }}" 
+                        <a type="submit" href="{{ route('product.show', ['productId' => $product->id]) }}" 
                             class="mt-10 flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
-                        View details</button>
+                        View details</a>
                         {{-- <a href="{{ route('products.show', ['product' => $product->id]) }}" class="btn btn-primary">View Details</a> --}}
 
                     </form>

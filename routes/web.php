@@ -32,7 +32,7 @@ Route::middleware('auth')->group(function () {
     // products
 
     Route::get('/products', [ProductController::class, 'index'])->name('product.index');
-    Route::get('/products/{product}', [ProductController::class, 'show'])->name('products.show');
+    Route::get('/products/{productId}', [ProductController::class, 'show'])->name('product.show');
 });
 
 
