@@ -33,13 +33,21 @@
             </span>
         </div>
     @endif
+
     <div class="bg-white">
+
+        <form action="{{ route('product.index') }}" method="GET">
+            <div class="input-group">
+                <input type="text" name="q" class="form-control" placeholder="Search products">
+                <div class="input-group-append">
+                    <button type="submit" class="btn btn-primary">Search</button>
+                </div>
+            </div>
+        </form>
+        
+
         @foreach ($products as $product)
             <div class="pt-6">
-
-
-
-
 
                 <nav aria-label="Breadcrumb">
                     <ol role="list"
@@ -70,7 +78,6 @@
                         </li>
                     </ol>
                 </nav>
-
 
 
                 <!-- Image gallery -->

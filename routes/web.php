@@ -38,6 +38,11 @@ Route::middleware('auth')->group(function () {
     Route::post('/cart/add/{product}', [CartController::class,'add'])->name('cart.add');
     Route::post('/cart/update/{product}', [CartController::class,'update'])->name('cart.update');
     Route::post('/cart/remove/{product}', [CartController::class,'remove'])->name('cart.remove');
+
+ 
+    // Route::get('/products/search', [ProductController::class, 'search'])->name('products.search');
+    // Route::get('/products/filter', [ProductController::class, 'filter'])->name('products.filter');
+
 });
 
 
