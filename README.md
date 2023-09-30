@@ -158,9 +158,9 @@ This will start a development server. By default, the application will be availa
 ### Accessing the Application
 
 - Homepage: `http://localhost:8000`
-- Admin Panel (if applicable): `http://localhost:8000/admin`
+- Product Page : `http://localhost:8000/product` (dont forget to run npm run dev)
 
-You can log in as an admin or use regular user credentials to explore the application.
+You must be auth before hitting that .
 
 ## Features
 
