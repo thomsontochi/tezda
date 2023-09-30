@@ -188,5 +188,4 @@ If you would like to contribute to this project, please follow these steps:
 This project is licensed under the [MIT License](LICENSE).
 
 ---
-
-Feel free to modify this README to include any additional information or specific instructions related to your project. Once you've created your README file, you can attach it to your GitHub repository to provide clear documentation for users and contributors.
+austin opia
