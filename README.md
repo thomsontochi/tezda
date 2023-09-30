@@ -104,13 +104,13 @@ Before running the application, make sure you have the following prerequisites i
 1. Clone this repository to your local machine:
 
    ```bash
-   git clone https://github.com/yourusername/ecommerce-app.git
+   git clone https://github.com/thomsontochi/tezda
    ```
 
 2. Navigate to the project directory:
 
    ```bash
-   cd ecommerce-app
+   cd tezda
    ```
 
 3. Install PHP dependencies:
